@@ -4,4 +4,6 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, 'events/index.html')
-    #return HttpResponse("hello ther")
+
+def search_no_login(request):
+    return render(request, 'events/search_no_login.html')

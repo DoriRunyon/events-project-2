@@ -1,12 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
-class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
-    email = models.CharField(max_length=50)
-    #need to fix password field
-    password = models.CharField(max_length=50)
+from django.contrib.auth.models import User
 
 class Artist(models.Model):
     artist_id = models.AutoField(primary_key=True)
@@ -31,4 +26,3 @@ class Event(models.Model):
 class UserSavedEvent(models.Model):
     user_id = models.ForeignKey(User)
     event_id = models.ForeignKey(Event)
-
