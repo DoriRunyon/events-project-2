@@ -2,6 +2,18 @@
 
 {% block content %}
         <div>
-            <h2>Search when not logged in</h2>
+            <h2>Search for Related Artists</h2>
+        </div>
+        <form action="/events/search" method="get">
+            <label for="artist_name">Artist Name: </label>
+            <input id="artist_name" type="text" name="artist_name">
+            <input type="submit" value="Search">
+        </form>
+
+        <div>
+            <h2> Artists Related to {{ artist }} </h2>
+            {% for related in related_artist_list %}
+                <li>{{ related }}</li>
+            {% endfor %}
         </div>
 {% endblock %}
