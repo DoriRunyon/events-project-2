@@ -9443,15 +9443,27 @@ module.exports = ReactPropTypesSecret;
 var React = __webpack_require__(52);
 
 var MyComponentClass = React.createClass({
-  displayName: 'MyComponentClass',
+    displayName: "MyComponentClass",
 
-  render: function () {
-    return React.createElement(
-      'h1',
-      null,
-      'Hello world'
-    );
-  }
+    scream: function () {
+        alert("aaaah!");
+    },
+    render: function () {
+        return React.createElement(
+            "div",
+            null,
+            React.createElement(
+                "h1",
+                null,
+                "Hello world"
+            ),
+            React.createElement(
+                "button",
+                { onClick: this.scream },
+                "Scary"
+            )
+        );
+    }
 });
 
 module.exports = MyComponentClass;
