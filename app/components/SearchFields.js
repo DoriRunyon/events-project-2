@@ -1,7 +1,6 @@
 var React = require('react');
-var SearchField = require('./SearchFields.js')
 
-var MyComponentClass = React.createClass({
+var SearchField = React.createClass({
     getInitialState: function () {
         return {
             userInput: ''
@@ -13,11 +12,11 @@ var MyComponentClass = React.createClass({
     render: function () {
         return (
             <div>
-             <SearchField placeholder="artist"/>
-             <SearchField placeholder="city"/>
+             <input type="text" placeholder={this.props.placeholder} onChange={this.handleUserInput} value={this.state.userInput}/>
+             <h1>{this.state.userInput}</h1>
             </div>
         );
     }
 });
 
-module.exports = MyComponentClass;
+module.exports = SearchField;
