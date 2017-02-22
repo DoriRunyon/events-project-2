@@ -1,20 +1,12 @@
 var React = require('react');
-var SearchField = require('./SearchFields.js')
+var SearchField = require('./SearchFields.js');
 
 var MyComponentClass = React.createClass({
-    getInitialState: function () {
-        return {
-            userInput: ''
-    };
-},
-    handleUserInput: function (e) {
-        this.setState({userInput: e.target.value});
-    },
     render: function () {
         return (
             <div>
-             <SearchField placeholder="artist"/>
-             <SearchField placeholder="city"/>
+             <SearchField placeholder="artist" message="events for artists related to "/>
+             <SearchField placeholder="city" message="in"/>
             </div>
         );
     }

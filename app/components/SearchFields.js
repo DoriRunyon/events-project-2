@@ -12,8 +12,8 @@ var SearchField = React.createClass({
     render: function () {
         return (
             <div>
-             <input type="text" placeholder={this.props.placeholder} onChange={this.handleUserInput} value={this.state.userInput}/>
-             <h1>{this.state.userInput}</h1>
+             <input type="text" placeholder={this.props.placeholder} onChange={this.handleUserInput} value={this.state.userInput}/>  
+             <h3>{this.props.message} {this.state.userInput}</h3>                                   
             </div>
         );
     }
